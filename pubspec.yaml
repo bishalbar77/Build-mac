@@ -43,7 +43,8 @@ dependencies:
   firebase_messaging: ^7.0.3
   share: ^0.6.5+4
   flutter_launcher_icons: ^0.8.1
-
+  firebase_core: ^0.5.3
+  firebase_analytics: ^6.3.0
 
 dev_dependencies:
   flutter_launcher_icons: "^0.8.0"
