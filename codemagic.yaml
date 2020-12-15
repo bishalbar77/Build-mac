@@ -30,9 +30,3 @@ workflows:
             app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution
                 apple_id: aym@macoma.co
                 password: Encrypted(Z0FBQUFBQmYyUHFrMVlLRFoyWURPOWRveEgtYTFTWlVYMm1ubk96RXVYZzNDQzZEZURGOFZXN2JzT3ZPN0tXcXBiR1JnekVvQ29wV0x3SGxldGJqdTBFQmFOU29VR0VBN3c9PQ==)
-            email:
-                recipients:
-                    - bishalranabr7@gmail.com
-                notify:
-                    - success: true
-                    - failure: true
