@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "211044364116",
+    "firebase_url": "https://macoma-app.firebaseio.com",
+    "project_id": "macoma-app",
+    "storage_bucket": "macoma-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211044364116:android:56e44465d9c9f13881e2c1",
+        "android_client_info": {
+          "package_name": "com.example.building_materials_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211044364116-heecvn49fmvfkl7am1rjb7kq83uovpg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOn_hdclBdJ0hE7ssUNWJs9AOx4jcrmGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211044364116-heecvn49fmvfkl7am1rjb7kq83uovpg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211044364116:android:ce2fa85eef1e879e81e2c1",
+        "android_client_info": {
+          "package_name": "com.northstarinnovationsllp.macoma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211044364116-l6j0u74e669aejm21q2iikucbbmn8qn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.northstarinnovationsllp.macoma",
+            "certificate_hash": "79002d6f849183aaf530e280fb5433d6da9acef3"
+          }
+        },
+        {
+          "client_id": "211044364116-heecvn49fmvfkl7am1rjb7kq83uovpg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOn_hdclBdJ0hE7ssUNWJs9AOx4jcrmGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211044364116-heecvn49fmvfkl7am1rjb7kq83uovpg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
