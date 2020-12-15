@@ -3,7 +3,7 @@ workflows:
         name: iOS App
         environment:
             vars:
-                XCODE_WORKSPACE: "com.example.buildingMaterialsApp"
+                XCODE_WORKSPACE: "Runner.xcodeproj"
                 XCODE_SCHEME: "flutter"
                 BUNDLE_ID: "com.example.buildingMaterialsApp" # <-- Put your Bundle Id here.
                 APP_STORE_CONNECT_ISSUER_ID: Encrypted(Z0FBQUFBQmYyUGF6QXd5dG95cjdUMmVweWRJTTdkRXF0bmV1NVg4MklCTWtvNzB5NHBWMTAxSEQxSExBU1Ffakh0ak9fN1U4QngyZlIxcERmTU4tQ3VGQTZTMGY5M0pzdXhHMTZBbE9ydHU5U3QyRlRvLWpRMmFOcTNDMFRjTjlzNmZZeENGR1lFNTE=)
