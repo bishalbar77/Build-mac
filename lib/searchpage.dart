@@ -33,7 +33,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.fromLTRB(10.0, 50.0, 10.0, 0.0),
-        child: Column(
+        child: ListView(
           children: <Widget>[
             Row(
               children: <Widget>[
