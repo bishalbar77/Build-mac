@@ -46,11 +46,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Image.asset(
-                  'assets/images/musutang.png',
+                  'assets/images/musutang.jpg',
                   width: MediaQuery.of(context).size.width*0.43,
                 ),
                 Image.asset(
-                  'assets/images/catalonia.png',
+                  'assets/images/catalonia.jpg',
                   width: MediaQuery.of(context).size.width*0.43,
                 ),
               ],
@@ -60,11 +60,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Image.asset(
-                  'assets/images/siena.png',
+                  'assets/images/siena.jpg',
                   width: MediaQuery.of(context).size.width*0.43,
                 ),
                 Image.asset(
-                  'assets/images/macoma.png',
+                  'assets/images/macoma.jpg',
                   width: MediaQuery.of(context).size.width*0.43,
                 ),
               ],
@@ -138,7 +138,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
               child: Row(
                 children: <Widget>[
                   Image.asset(
-                      'assets/images/whatsapplogo.png',
+                      'assets/images/whatsapplogo.jpg',
                     height: 30,
                     width: 30,
                   ),
@@ -158,7 +158,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
               child: Row(
                 children: <Widget>[
                   Image.asset(
-                    'assets/images/call.png',
+                    'assets/images/call.jpg',
                     height: 30,
                     width: 30,
                   ),

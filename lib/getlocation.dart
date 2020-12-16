@@ -67,7 +67,7 @@ class _GetLocationPageState extends State<GetLocationPage> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 30.0),
                   child: Image.asset(
-                    'assets/images/icon.png',
+                    'assets/images/icon.jpg',
                     width: 150,
                   ),
                 ),
@@ -118,7 +118,7 @@ class _GetLocationPageState extends State<GetLocationPage> {
                         //crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Image.asset(
-                            'assets/images/tick_1.png',
+                            'assets/images/tick_1.jpg',
                             height: 20,
                             width: 20,
                           ),
