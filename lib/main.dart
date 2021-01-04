@@ -50,6 +50,9 @@ class _MyAppState extends State<MyApp> {
     new Timer(new Duration(milliseconds: 200), () {
       locationCheck();
     });
+    new Timer(new Duration(milliseconds: 1000), () {
+      HomeApp();
+    });
   }
 
   @override
@@ -87,7 +90,7 @@ class _MyAppState extends State<MyApp> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: HomeApp(),
-      home: (_locationDone == 0) ? GetLocationPage() : HomeApp(),
+      home: HomeApp(),
     );
   }
 }
