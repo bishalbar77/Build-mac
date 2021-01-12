@@ -71,7 +71,9 @@ flutter:
   assets:
     - assets/images/6061102/
     - assets/images/6061107/
-    - assets/images/
+    - assets/images/home1.jpg
+    - assets/images/home2.jpg
+    - assets/images/home3.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

@@ -408,7 +408,7 @@ class _HomePageState extends State<HomePage> {
                       child: SizedBox(
                         height: 180,
                         child: Image.asset(
-                          'assets/images/home1.png',
+                          'assets/images/home1.jpg',
 //                      height: 200,
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.5 - 25,
@@ -435,7 +435,7 @@ class _HomePageState extends State<HomePage> {
                       child: SizedBox(
                         height: 180,
                         child: Image.asset(
-                          'assets/images/home2.png',
+                          'assets/images/home2.jpg',
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.5 - 25,
                         ),
@@ -460,7 +460,7 @@ class _HomePageState extends State<HomePage> {
                   margin: EdgeInsets.zero,
                   elevation: 5,
                   child: Image.asset(
-                    'assets/images/home3.png',
+                    'assets/images/home3.jpg',
                     width: double.infinity,
                   ),
                 ),
@@ -1298,7 +1298,7 @@ class Category1 extends StatelessWidget {
 //            colors: [Color(0xff5f2c82), Color(0xff49a09d)]
 //        ),
         image: DecorationImage(
-          image: AssetImage("assets/images/SBF white.png"),
+          image: AssetImage("assets/images/SBF white.jpg"),
           fit: BoxFit.cover,
         ),
       ),
@@ -1330,7 +1330,7 @@ class Category2 extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/BMT white.png"),
+          image: AssetImage("assets/images/BMT white.jpg"),
           fit: BoxFit.cover,
         ),
       ),
@@ -1362,7 +1362,7 @@ class Category3 extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/image.png"),
+          image: AssetImage("assets/images/image.jpg"),
           fit: BoxFit.cover,
         ),
       ),
