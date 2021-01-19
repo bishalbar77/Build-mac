@@ -105,8 +105,8 @@ class _ProductCategoryPageState extends State<ProductCategoryPage> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => AddToCartPage(
-                            fromHomePage: false,
-                          )),
+                        fromHomePage: false,
+                      )),
                 ).then((value) {
                   setState(() {});
                 });
@@ -114,7 +114,7 @@ class _ProductCategoryPageState extends State<ProductCategoryPage> {
               icon: Badge(
                 //position: BadgePosition.topEnd(top: 10, end: 10),
                 showBadge:
-                    (GlobalVariables.total_cart_items == 0) ? false : true,
+                (GlobalVariables.total_cart_items == 0) ? false : true,
                 badgeColor: Colors.red[500],
                 badgeContent: Text(
                   GlobalVariables.total_cart_items.toString(),
@@ -137,506 +137,506 @@ class _ProductCategoryPageState extends State<ProductCategoryPage> {
       ),
       body: (_loading == true)
           ? Center(
-              child: CircularProgressIndicator(
-                valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
-              ),
-            )
+        child: CircularProgressIndicator(
+          valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
+        ),
+      )
           : Padding(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: series_product.map((j) {
-                  if (j[1].length != 0) {
-                    var series_no = j[0];
-                    var series_list = j[1];
-                    // print(series_no);
-                    // print(series_list);
+        padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: series_product.map((j) {
+            if (j[1].length != 0) {
+              var series_no = j[0];
+              var series_list = j[1];
+              // print(series_no);
+              // print(series_list);
 
-                    if (series_no != "0") {
-                      return Column(
-                        //mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            'SERIES ' + series_no.toString(),
-                            style: TextStyle(
-                              fontSize: 18,
-                              letterSpacing: 0.8,
-                              color: Colors.grey[800],
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          SizedBox(
-                              height: 280,
-                              width: double.infinity,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: series_list.map<Widget>((i) {
-                                  var innerprice;
-                                  var stock_availability;
-                                  var sale =
-                                      0; //0 means no sale(default), 1 means sale
-                                  var saleprice;
-                                  var salepercent;
-                                  // print(i);
-                                  for (int x = 0; x < i[4].length; x++) {
-                                    // print(i[4][x][1]);
-                                    if (GlobalVariables.countryId.toString() ==
-                                        i[4][x][1]) {
-                                      innerprice = double.parse(i[4][x][4]);
-                                      // print("hii");
-                                      stock_availability = i[4][x][5];
-                                      if (i[4][x][6].length != 0) {
-                                        sale = 1;
-                                        saleprice = double.parse(i[4][x][6][1]);
-                                        print("saleprice=" +
-                                            saleprice.toString());
-                                        salepercent = (innerprice - saleprice) /
-                                            innerprice *
-                                            100;
-                                        salepercent = num.parse(
-                                            salepercent.toStringAsFixed(0));
-                                        print(salepercent.toString());
-                                      }
-                                    }
-                                  }
-                                  return Padding(
-                                    padding: const EdgeInsets.only(right: 20.0),
-                                    child: Stack(
-                                      children: [
-                                        Container(
-                                          height: 280,
-                                          width: 190,
-                                          constraints: BoxConstraints(
-                                              minWidth: 100, maxWidth: 200),
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                            border: Border.all(
-                                              color: Colors.grey[350],
+              if (series_no != "0") {
+                return Column(
+                  //mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'SERIES ' + series_no.toString(),
+                      style: TextStyle(
+                        fontSize: 18,
+                        letterSpacing: 0.8,
+                        color: Colors.grey[800],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    SizedBox(
+                        height: 280,
+                        width: double.infinity,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: series_list.map<Widget>((i) {
+                            var innerprice=0.0;
+                            var stock_availability;
+                            var sale =
+                            0; //0 means no sale(default), 1 means sale
+                            var saleprice=0.0;
+                            var salepercent=0.0;
+                            // print(i);
+                            for (int x = 0; x < i[4].length; x++) {
+                              // print(i[4][x][1]);
+                              if (GlobalVariables.countryId.toString() ==
+                                  i[4][x][1]) {
+                                innerprice = double.parse(i[4][x][4]);
+                                // print("hii");
+                                stock_availability = i[4][x][5];
+                                if (i[4][x][6].length != 0) {
+                                  sale = 1;
+                                  saleprice = double.parse(i[4][x][6][1]);
+                                  print("saleprice=" +
+                                      saleprice.toString());
+                                  salepercent = (innerprice - saleprice) /
+                                      innerprice *
+                                      100;
+                                  salepercent = num.parse(
+                                      salepercent.toStringAsFixed(0));
+                                  print(salepercent.toString());
+                                }
+                              }
+                            }
+                            return Padding(
+                              padding: const EdgeInsets.only(right: 20.0),
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    height: 280,
+                                    width: 190,
+                                    constraints: BoxConstraints(
+                                        minWidth: 100, maxWidth: 200),
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                      BorderRadius.circular(10.0),
+                                      border: Border.all(
+                                        color: Colors.grey[350],
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: FlatButton(
+                                        padding:
+                                        const EdgeInsets.all(0.0),
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ActualProductPage(
+                                                        productId:
+                                                        int.parse(
+                                                            i[0]))),
+                                          ).then((value) {
+                                            setState(() {});
+                                          });
+                                        },
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            SizedBox(
+                                              height: 180,
+                                              width: double.infinity,
+                                              child: Image.network(
+                                                'http://huzefam.sg-host.com/' +
+                                                    i[3],
+                                                fit: BoxFit.fill,
+                                              ),
                                             ),
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: FlatButton(
-                                              padding:
-                                                  const EdgeInsets.all(0.0),
-                                              onPressed: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          ActualProductPage(
-                                                              productId:
-                                                                  int.parse(
-                                                                      i[0]))),
-                                                ).then((value) {
-                                                  setState(() {});
-                                                });
-                                              },
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            SizedBox(
+                                              width: 180,
+                                              child: Row(
                                                 children: <Widget>[
-                                                  SizedBox(
-                                                    height: 180,
-                                                    width: double.infinity,
-                                                    child: Image.network(
-                                                      'http://huzefam.sg-host.com/' +
-                                                          i[3],
-                                                      fit: BoxFit.fill,
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 180,
-                                                    child: Row(
-                                                      children: <Widget>[
-                                                        Expanded(
-                                                          child: Text(
-                                                            i[1],
-                                                            style: TextStyle(
-                                                              fontSize: 13,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w400,
-                                                              color: Colors
-                                                                  .grey[600],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  SizedBox(
-                                                    width: double.infinity,
-                                                    child: Row(
-                                                      children: <Widget>[
-                                                        (sale == 0)
-                                                            ? Expanded(
-                                                                child:
-                                                                    (i[5] != "")
-                                                                        ? Text(
-                                                                            innerprice.toString() +
-                                                                                " " +
-                                                                                GlobalVariables.currency +
-                                                                                "/" +
-                                                                                i[5],
-                                                                            style:
-                                                                                TextStyle(
-                                                                              fontSize: 18,
-                                                                              fontWeight: FontWeight.bold,
-                                                                            ),
-                                                                          )
-                                                                        : Text(
-                                                                            innerprice.toString() +
-                                                                                " " +
-                                                                                GlobalVariables.currency,
-                                                                            style:
-                                                                                TextStyle(
-                                                                              fontSize: 18,
-                                                                              fontWeight: FontWeight.bold,
-                                                                            ),
-                                                                          ),
-                                                              )
-                                                            : Row(
-                                                                children: [
-                                                                  (i[5] != "")
-                                                                      ? Text(
-                                                                          saleprice.toString() +
-                                                                              " " +
-                                                                              GlobalVariables.currency +
-                                                                              "/" +
-                                                                              i[5] +
-                                                                              " ",
-                                                                          style:
-                                                                              TextStyle(
-                                                                            fontSize:
-                                                                                18,
-                                                                            fontWeight:
-                                                                                FontWeight.bold,
-                                                                          ),
-                                                                        )
-                                                                      : Text(
-                                                                          saleprice.toString() +
-                                                                              " " +
-                                                                              GlobalVariables.currency +
-                                                                              " ",
-                                                                          style:
-                                                                              TextStyle(
-                                                                            fontSize:
-                                                                                18,
-                                                                            fontWeight:
-                                                                                FontWeight.bold,
-                                                                          ),
-                                                                        ),
-                                                                  Text(
-                                                                    innerprice
-                                                                        .toString(),
-                                                                    style:
-                                                                        TextStyle(
-                                                                      color: Colors
-                                                                              .green[
-                                                                          600],
-                                                                      decoration:
-                                                                          TextDecoration
-                                                                              .lineThrough,
-                                                                      fontSize:
-                                                                          16,
-                                                                      decorationThickness:
-                                                                          1,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w400,
-                                                                      // fontWeight: FontWeight.bold,
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                      ],
+                                                  Expanded(
+                                                    child: Text(
+                                                      i[1],
+                                                      style: TextStyle(
+                                                        fontSize: 13,
+                                                        fontWeight:
+                                                        FontWeight
+                                                            .w400,
+                                                        color: Colors
+                                                            .grey[600],
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        (sale == 0)
-                                            ? Container()
-                                            : Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Container(
-                                                  decoration: new BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                    color: Colors.green[500],
-                                                  ),
-                                                  height: 20,
-                                                  width: 30,
-                                                  alignment: Alignment.topLeft,
-                                                  child: Center(
-                                                    child: Text(
-                                                      salepercent.toString() +
-                                                          '%',
-                                                      style: TextStyle(
-                                                          fontSize: 10,
-                                                          color: Colors.white),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                        (stock_availability == "1")
-                                            ? Container()
-                                            : Center(
-                                                child: Container(
-                                                  decoration: new BoxDecoration(
-                                                    color: Colors.red[300]
-                                                        .withOpacity(0.40),
-                                                  ),
-                                                  height: 25,
-                                                  width: 160,
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Out of Stock',
-                                                    style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontStyle:
-                                                          FontStyle.italic,
-                                                      fontSize: 16,
-                                                      letterSpacing: 1.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                      ],
-                                    ),
-                                  );
-                                }).toList(),
-                              )),
-                          SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      );
-                    } else {
-                      return Column(
-                        children: series_list.map<Widget>((i) {
-                          //print(i);
-                          var innerprice;
-                          var stock_availability;
-                          var sale = 0; //0 means no sale(default), 1 means sale
-                          var saleprice;
-                          var salepercent;
-                          // print(i);
-                          for (int x = 0; x < i[4].length; x++) {
-                            // print(i[4][x][1]);
-                            if (GlobalVariables.countryId.toString() ==
-                                i[4][x][1]) {
-                              innerprice = double.parse(i[4][x][4]);
-                              // print("hii");
-                              stock_availability = i[4][x][5];
-                              if (i[4][x][6].length != 0) {
-                                sale = 1;
-                                saleprice = double.parse(i[4][x][6][1]);
-                                print("saleprice=" + saleprice.toString());
-                                salepercent =
-                                    (innerprice - saleprice) / innerprice * 100;
-                                salepercent =
-                                    num.parse(salepercent.toStringAsFixed(0));
-                                print("salepercent=" + salepercent.toString());
-                              }
-                            }
-                          }
-                          return FlatButton(
-                            padding: EdgeInsets.all(0),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ActualProductPage(
-                                        productId: int.parse(i[0]))),
-                              ).then((value) {
-                                setState(() {});
-                              });
-                            },
-                            child: Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Row(
-                                  children: <Widget>[
-                                    Image.network(
-                                      'http://huzefam.sg-host.com/' +
-                                          i[3].toString(),
-                                      height: 130,
-                                      width: 130,
-                                    ),
-                                    //SizedBox(width: 15,),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            i[1].toString(),
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.grey[800],
+                                            SizedBox(
+                                              height: 5,
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 2,
-                                          ),
-                                          (sale == 0)
-                                              ? ((i[5] != "")
-                                                  ? Text(
-                                                      innerprice.toString() +
-                                                          " " +
-                                                          GlobalVariables
-                                                              .currency +
-                                                          "/" +
-                                                          i[5],
-                                                      style: TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    )
-                                                  : Text(
-                                                      innerprice.toString() +
-                                                          " " +
-                                                          GlobalVariables
-                                                              .currency,
-                                                      style: TextStyle(
-                                                        fontSize: 20,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    ))
-                                              : Row(
-                                                  children: [
+                                            SizedBox(
+                                              width: double.infinity,
+                                              child: Row(
+                                                children: <Widget>[
+                                                  (sale == 0)
+                                                      ? Expanded(
+                                                    child:
                                                     (i[5] != "")
                                                         ? Text(
-                                                            saleprice
-                                                                    .toString() +
-                                                                " " +
-                                                                GlobalVariables
-                                                                    .currency +
-                                                                "/" +
-                                                                i[5] +
-                                                                " ",
-                                                            style: TextStyle(
-                                                                fontSize: 18,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                color: Colors
-                                                                        .green[
-                                                                    600]),
-                                                          )
+                                                      innerprice.toString() +
+                                                          " " +
+                                                          GlobalVariables.currency +
+                                                          "/" +
+                                                          i[5],
+                                                      style:
+                                                      TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight: FontWeight.bold,
+                                                      ),
+                                                    )
                                                         : Text(
-                                                            saleprice
-                                                                    .toString() +
-                                                                " " +
-                                                                GlobalVariables
-                                                                    .currency +
-                                                                " ",
-                                                            style: TextStyle(
-                                                                fontSize: 18,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                color: Colors
-                                                                        .green[
-                                                                    600]),
-                                                          ),
-                                                    Text(
-                                                      innerprice.toString(),
-                                                      style: TextStyle(
-                                                        color: Colors.grey,
-                                                        decoration:
-                                                            TextDecoration
-                                                                .lineThrough,
-                                                        fontSize: 16,
-                                                        decorationThickness: 2,
-                                                        // fontWeight: FontWeight.bold,
+                                                      innerprice.toString() +
+                                                          " " +
+                                                          GlobalVariables.currency,
+                                                      style:
+                                                      TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight: FontWeight.bold,
                                                       ),
                                                     ),
-                                                  ],
-                                                ),
-                                          (sale == 0)
-                                              ? Container()
-                                              : Container(
-                                                  decoration: new BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            5),
-                                                    color: Colors.green[500],
-                                                  ),
-                                                  height: 20,
-                                                  width: 30,
-                                                  alignment: Alignment.topLeft,
-                                                  child: Center(
-                                                    child: Text(
-                                                      salepercent.toString() +
-                                                          '%',
-                                                      style: TextStyle(
-                                                          fontSize: 10,
-                                                          color: Colors.white),
-                                                    ),
-                                                  ),
-                                                ),
-                                          (stock_availability == "1")
-                                              ? Container()
-                                              : Center(
-                                                  child: Container(
-                                                    decoration:
-                                                        new BoxDecoration(
-                                                      color: Colors.red[300]
-                                                          .withOpacity(0.40),
-                                                    ),
-                                                    height: 25,
-                                                    width: double.infinity,
-                                                    alignment: Alignment.center,
-                                                    child: Text(
-                                                      'Out of Stock',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontStyle:
-                                                            FontStyle.italic,
-                                                        fontSize: 16,
-                                                        letterSpacing: 1.0,
+                                                  )
+                                                      : Row(
+                                                    children: [
+                                                      (i[5] != "")
+                                                          ? Text(
+                                                        saleprice.toString() +
+                                                            " " +
+                                                            GlobalVariables.currency +
+                                                            "/" +
+                                                            i[5] +
+                                                            " ",
+                                                        style:
+                                                        TextStyle(
+                                                          fontSize:
+                                                          18,
+                                                          fontWeight:
+                                                          FontWeight.bold,
+                                                        ),
+                                                      )
+                                                          : Text(
+                                                        saleprice.toString() +
+                                                            " " +
+                                                            GlobalVariables.currency +
+                                                            " ",
+                                                        style:
+                                                        TextStyle(
+                                                          fontSize:
+                                                          18,
+                                                          fontWeight:
+                                                          FontWeight.bold,
+                                                        ),
                                                       ),
-                                                    ),
+                                                      Text(
+                                                        innerprice
+                                                            .toString(),
+                                                        style:
+                                                        TextStyle(
+                                                          color: Colors
+                                                              .green[
+                                                          600],
+                                                          decoration:
+                                                          TextDecoration
+                                                              .lineThrough,
+                                                          fontSize:
+                                                          16,
+                                                          decorationThickness:
+                                                          1,
+                                                          fontWeight:
+                                                          FontWeight
+                                                              .w400,
+                                                          // fontWeight: FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
-                                                ),
-                                        ],
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  (sale == 0)
+                                      ? Container()
+                                      : Padding(
+                                    padding:
+                                    const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      decoration: new BoxDecoration(
+                                        borderRadius:
+                                        BorderRadius.circular(
+                                            5),
+                                        color: Colors.green[500],
+                                      ),
+                                      height: 20,
+                                      width: 30,
+                                      alignment: Alignment.topLeft,
+                                      child: Center(
+                                        child: Text(
+                                          salepercent.toString() +
+                                              '%',
+                                          style: TextStyle(
+                                              fontSize: 10,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  (stock_availability == "1")
+                                      ? Container()
+                                      : Center(
+                                    child: Container(
+                                      decoration: new BoxDecoration(
+                                        color: Colors.red[300]
+                                            .withOpacity(0.40),
+                                      ),
+                                      height: 25,
+                                      width: 160,
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        'Out of Stock',
+                                        style: TextStyle(
+                                          fontWeight:
+                                          FontWeight.bold,
+                                          fontStyle:
+                                          FontStyle.italic,
+                                          fontSize: 16,
+                                          letterSpacing: 1.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }).toList(),
+                        )),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                );
+              } else {
+                return Column(
+                  children: series_list.map<Widget>((i) {
+                    //print(i);
+                    var innerprice=0.0;
+                    var stock_availability;
+                    var sale = 0; //0 means no sale(default), 1 means sale
+                    var saleprice=0.0;
+                    var salepercent=0.0;
+                    // print(i);
+                    for (int x = 0; x < i[4].length; x++) {
+                      // print(i[4][x][1]);
+                      if (GlobalVariables.countryId.toString() ==
+                          i[4][x][1]) {
+                        innerprice = double.parse(i[4][x][4]);
+                        // print("hii");
+                        stock_availability = i[4][x][5];
+                        if (i[4][x][6].length != 0) {
+                          sale = 1;
+                          saleprice = double.parse(i[4][x][6][1]);
+                          print("saleprice=" + saleprice.toString());
+                          salepercent =
+                              (innerprice - saleprice) / innerprice * 100;
+                          salepercent =
+                              num.parse(salepercent.toStringAsFixed(0));
+                          print("salepercent=" + salepercent.toString());
+                        }
+                      }
+                    }
+                    return FlatButton(
+                      padding: EdgeInsets.all(0),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ActualProductPage(
+                                  productId: int.parse(i[0]))),
+                        ).then((value) {
+                          setState(() {});
+                        });
+                      },
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            children: <Widget>[
+                              Image.network(
+                                'http://huzefam.sg-host.com/' +
+                                    i[3].toString(),
+                                height: 130,
+                                width: 130,
+                              ),
+                              //SizedBox(width: 15,),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      i[1].toString(),
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.grey[800],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 2,
+                                    ),
+                                    (sale == 0)
+                                        ? ((i[5] != "")
+                                        ? Text(
+                                      innerprice.toString() +
+                                          " " +
+                                          GlobalVariables
+                                              .currency +
+                                          "/" +
+                                          i[5],
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight:
+                                        FontWeight.bold,
+                                      ),
+                                    )
+                                        : Text(
+                                      innerprice.toString() +
+                                          " " +
+                                          GlobalVariables
+                                              .currency,
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight:
+                                        FontWeight.bold,
+                                      ),
+                                    ))
+                                        : Row(
+                                      children: [
+                                        (i[5] != "")
+                                            ? Text(
+                                          saleprice
+                                              .toString() +
+                                              " " +
+                                              GlobalVariables
+                                                  .currency +
+                                              "/" +
+                                              i[5] +
+                                              " ",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight:
+                                              FontWeight
+                                                  .bold,
+                                              color: Colors
+                                                  .green[
+                                              600]),
+                                        )
+                                            : Text(
+                                          saleprice
+                                              .toString() +
+                                              " " +
+                                              GlobalVariables
+                                                  .currency +
+                                              " ",
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight:
+                                              FontWeight
+                                                  .bold,
+                                              color: Colors
+                                                  .green[
+                                              600]),
+                                        ),
+                                        Text(
+                                          innerprice.toString(),
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            decoration:
+                                            TextDecoration
+                                                .lineThrough,
+                                            fontSize: 16,
+                                            decorationThickness: 2,
+                                            // fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    (sale == 0)
+                                        ? Container()
+                                        : Container(
+                                      decoration: new BoxDecoration(
+                                        borderRadius:
+                                        BorderRadius.circular(
+                                            5),
+                                        color: Colors.green[500],
+                                      ),
+                                      height: 20,
+                                      width: 30,
+                                      alignment: Alignment.topLeft,
+                                      child: Center(
+                                        child: Text(
+                                          salepercent.toString() +
+                                              '%',
+                                          style: TextStyle(
+                                              fontSize: 10,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                    (stock_availability == "1")
+                                        ? Container()
+                                        : Center(
+                                      child: Container(
+                                        decoration:
+                                        new BoxDecoration(
+                                          color: Colors.red[300]
+                                              .withOpacity(0.40),
+                                        ),
+                                        height: 25,
+                                        width: double.infinity,
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          'Out of Stock',
+                                          style: TextStyle(
+                                            fontWeight:
+                                            FontWeight.bold,
+                                            fontStyle:
+                                            FontStyle.italic,
+                                            fontSize: 16,
+                                            letterSpacing: 1.0,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ),
-                          );
-                        }).toList(),
-                      );
-                    }
-                  } else {
-                    return Container();
-                  }
-                }).toList(),
-              ),
-            ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                );
+              }
+            } else {
+              return Container();
+            }
+          }).toList(),
+        ),
+      ),
     );
   }
 }
