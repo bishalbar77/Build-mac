@@ -42,7 +42,7 @@ class _ActualProductPageState extends State<ActualProductPage> {
   var no_of_images;
   var country_info = [];
   var price=0.0;
-  var stock_availability;
+  var stock_availability = "Available";
   var currency="AED";
   var sale = 0; //0 means no sale(default), 1 means sale
   var saleprice=0.0;
