@@ -1,4 +1,4 @@
-package com.northstarinnovationsllp.macoma
+package com.app.macoma
 
 import io.flutter.embedding.android.FlutterActivity
 
